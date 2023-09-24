@@ -34,9 +34,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     nickname = models.CharField(verbose_name="닉네임", max_length=50)
     password = models.CharField(verbose_name="비밀번호", max_length=50)
     email = models.EmailField(verbose_name="이메일", unique=True)
+    last_login = models.DateTimeField(verbose_name="마지막 로그인 시각", auto_now=True)
+    
 
     objects = UserManager()
-
+    
     start_date = models.DateTimeField(default=timezone.now)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
