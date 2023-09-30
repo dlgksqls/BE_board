@@ -25,6 +25,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
-
+      
 class Tag(models.Model):
     tag_name = models.CharField(max_length=10, verbose_name="태그")
+
