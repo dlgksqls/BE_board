@@ -12,6 +12,8 @@ class Board(models.Model):
         "accounts.User", verbose_name="작성자", on_delete=models.CASCADE
     )
 
+    tagging = models.ManyToManyField("Tag", related_name="tagging")
+
     def __str__(self):
         return self.title
 
@@ -23,3 +25,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Tag(models.Model):
+    tag_name = models.CharField(max_length=10, verbose_name="태그")
