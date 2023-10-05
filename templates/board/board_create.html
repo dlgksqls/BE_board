@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 생성</title>
+</head>
+<body>
+  <div class="wrapper" style="text-align: center;">
+    <h1>글 생성</h1>
+    <form method="POST">
+        {% csrf_token %}
+        제목: <br>
+        <input name="title" type="text">
+        <br>
+        내용: <br>
+        <input name="contents" type="text">
+        <br>
+        사진: <br>
+        <input name="images" type="images">
+        <br>
+        <br><br>
+        <input type="submit" class="btn btn-primary" value="생성하기">
+    </form>
+</div>
+</body>
+</html>

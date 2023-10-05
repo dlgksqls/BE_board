@@ -8,6 +8,12 @@
 <body>
   <h1>피드</h1>
 
-  <h1>사용자 : {{request.user}} </h1>
+  {% if request.user == none %}
+    <h1>로그인하세요.</h1>
+  {% else %}
+    <h1>사용자 : {{request.user}} </h1>
+    <h1><a href="{% url 'board:create' %}">글 생성</a></h1>
+    <h1><a href="{% url 'accounts:logout' %}">로그아웃</a></h1>
+  {% endif %}
 </body>
 </html>
