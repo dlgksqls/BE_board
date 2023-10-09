@@ -3,26 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>글 생성</title>
+  <title>글 업데이트</title>
 </head>
 <body>
   <div class="wrapper" style="text-align: center;">
-    <h1>글 생성</h1>
+    <h1>글 업데이트</h1>
     <form method="POST">
         {% csrf_token %}
         제목: <br>
         <textarea name="content" id="" cols="20" rows="2">
+          {% if board.title %}
+            {{ board.title }}
+          {% endif %}
           </textarea>
         <br>
         내용: <br>
         <textarea name="content" id="" cols="30" rows="10">
+        {% if board.contents %}
+          {{ board.contents }}
+        {% endif %}
         </textarea>
         <br>
         사진: <br>
         <input name="image" type="image">
+        {% if board.images %}
+          <h2>이미지 변경</h2>
+          <input name="image" type="image">
+        {% endif %}
         <br>
         <br><br>
-        <input type="submit" class="btn btn-primary" value="생성하기">
+        <input type="submit" class="btn btn-primary" value="변경하게">
     </form>
 </div>
 </body>
