@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ board.writer }} 님의 글</h1>
+    <h2>{{ board.contents }}</h2>
+
+    <a href="{% url 'board:update' board.id %}">수정하기</a>
+</body>
+</html>

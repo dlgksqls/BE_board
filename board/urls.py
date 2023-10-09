@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import home, create_view
+from .views import home, create_view, detail_view, update_view
 
 app_name = "board"
 
@@ -24,4 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", home, name="home"),
     path("create/", create_view, name="create"),
+    path("detail/<int:id>", detail_view, name="detail"),
+    path("update/<int:id>", update_view, name="update"),
 ]
